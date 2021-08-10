@@ -1,0 +1,88 @@
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box; /* css3盒子模型 */
+}
+
+/* em 和 i 斜体的文字不倾斜 */
+em,i {
+  font-style:normal;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+img {
+  border:0; /* 照顾低版本浏览器，图片外面包含链接会有边框的问题 */
+  vertical-align:middle; /* 取消图片底部有空白缝隙的问题 */
+}
+
+button {
+  cursor:pointer; /* 鼠标经过时变成小手 */
+}
+
+a {
+  color:#666;
+  text-decoration:none;
+}
+
+a:hover {
+  color:#73c9e5;
+}
+
+button,input {
+  font-family:Microsoft YaHei,Heiti SC,tahoma,arial,Hiragino Sans GB,"\5B8B\4F53",sans-serif;
+  /* 去除默认边框 */
+  border: 0;
+  outline: none;
+}
+
+body {
+  -webkit-font-smoothing:antialiased; /* 抗锯齿性，文字显示更清晰 */
+  background-color:#fff;
+  font:14px/1.5 -apple-system,BlinkMacSystemFont,Helvetica Neue,Helvetica,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,sans-serif;
+  color:#666;
+}
+
+/* 隐藏元素 与 清除浮动 */
+.hide, .none {
+  display:none;
+}
+
+.clearfix:after {
+  visibility:hidden;
+  clear:both;
+  display:block;
+  content:"";
+  height:0
+}
+
+.clearfix {
+  *zoom:1
+}
+
+
+/* 版心 w */
+.m-width {
+  width: 1200px;
+  margin: 0 auto;
+}
+.red-color {
+  color: #c81623;
+}
+/* 字体图标声明 */
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?xohwy0');
+  src:  url('../fonts/icomoon.eot?xohwy0#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?xohwy0') format('truetype'),
+    url('../fonts/icomoon.woff?xohwy0') format('woff'),
+    url('../fonts/icomoon.svg?xohwy0#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+.iconfont {
+  font-family: 'icomoon';
+ }
