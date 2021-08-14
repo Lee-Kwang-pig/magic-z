@@ -9,10 +9,10 @@
                 <a href="#"><img src="~@/assets/img/logo/mz_4.png" alt=""></a>
               </li>
               <li class="nav-link-item">
-                <a href="#" class="link">主站</a>
+                <router-link class="link" to="/home">主站</router-link>
               </li>
               <li class="nav-link-item">
-                <a href="#" class="link">编程</a>
+                <router-link class="link" to="/code">编程</router-link>
               </li>
               <li class="nav-link-item">
                 <a href="#" class="link">音乐</a>
@@ -24,8 +24,14 @@
                 <a href="#" class="link">小游戏</a>
               </li>
               <li class="nav-link-item dropdown">
-                <a href="#" class="link">百宝袋</a>
-                <i class="iconfont"></i>
+                <el-dropdown>
+                  <a href="#" class="link">百宝袋<i class="iconfont"></i></a>
+                  <el-dropdown-menu slot="dropdown">
+                    <el-dropdown-item>待开发A</el-dropdown-item>
+                    <el-dropdown-item>待开发B</el-dropdown-item>
+                    <el-dropdown-item>待开发C</el-dropdown-item>
+                  </el-dropdown-menu>
+                </el-dropdown>
               </li>
             </ul>
           </div>
@@ -34,9 +40,11 @@
         <template v-slot:center>
           <div class="nav-search-box">
             <div class="nav-search-form">
-              <input type="text" placeholder='请输入搜索关键词' class="nav-search-keyword">
+              <input type="text" placeholder='请输入搜索关键词'
+                class="nav-search-keyword"
+                @keypress="handleKeydownSearch">
               <div class="nav-search-btn">
-                <button type="button" class="nav-search-submit">
+                <button type="button" class="nav-search-submit" @click="handleClickSearch">
                   <i class="iconfont"></i>
                 </button>
               </div>
@@ -50,16 +58,53 @@
               <li class="user-login">
                 <img src="~@/assets/img/user_photo.png" alt="">
               </li>
-              <li class="vip-center">会员中心</li>
-              <li class="user-collect">收藏</li>
-              <li class="user-msg">消息</li>
-              <li class="user-dynamic">动态</li>
+              <li class="vip-center">
+               <el-dropdown>
+                  <span>会员中心</span>
+                  <el-dropdown-menu slot="dropdown">
+                    <el-dropdown-item>待开发A</el-dropdown-item>
+                    <el-dropdown-item>待开发B</el-dropdown-item>
+                    <el-dropdown-item>待开发C</el-dropdown-item>
+                  </el-dropdown-menu>
+                </el-dropdown>
+              </li>
+              <li class="user-collect">
+               <el-dropdown>
+                  <span>收藏</span>
+                  <el-dropdown-menu slot="dropdown">
+                    <el-dropdown-item>待开发A</el-dropdown-item>
+                    <el-dropdown-item>待开发B</el-dropdown-item>
+                    <el-dropdown-item>待开发C</el-dropdown-item>
+                  </el-dropdown-menu>
+                </el-dropdown>
+              </li>
+              <li class="user-msg">
+               <el-dropdown>
+                  <span>消息</span>
+                  <el-dropdown-menu slot="dropdown">
+                    <el-dropdown-item>待开发A</el-dropdown-item>
+                    <el-dropdown-item>待开发B</el-dropdown-item>
+                    <el-dropdown-item>待开发C</el-dropdown-item>
+                  </el-dropdown-menu>
+                </el-dropdown>
+              </li>
+              <li class="user-dynamic">
+               <el-dropdown>
+                  <span>动态</span>
+                  <el-dropdown-menu slot="dropdown">
+                    <el-dropdown-item>待开发A</el-dropdown-item>
+                    <el-dropdown-item>待开发B</el-dropdown-item>
+                    <el-dropdown-item>待开发C</el-dropdown-item>
+                  </el-dropdown-menu>
+                </el-dropdown>
+              </li>
               <li class="about">关于</li>
             </ul>
           </div>
         </template>
     </international-header>
   </div>
+
 </template>
 
 <script>
@@ -69,11 +114,23 @@ export default {
   name: 'MainHeader',
   components: {
     InternationalHeader
+  },
+  methods: {
+    handleKeydownSearch () {
+      const inputKeyword = document.querySelector('.nav-search-keyword')
+      if (event.keyCode === 13) {
+        alert('未查询到' + ' "' + inputKeyword.value + '"')
+      }
+    },
+    handleClickSearch () {
+      const inputKeyword = document.querySelector('.nav-search-keyword')
+      alert('未查询到' + ' "' + inputKeyword.value + '"')
+    }
   }
 }
 </script>
 
-<style>
+<style scoped>
 /* ------左侧导航链接------ */
 .nav-link,
 .nav-search-box,
@@ -97,6 +154,9 @@ export default {
   font-size: 16px;
   line-height: 32px;
   color: #fff;
+}
+.mz-icon {
+  position: relative;
 }
 .mz-icon img{
   position: relative;
@@ -158,6 +218,20 @@ export default {
 /* 头部背景区域 */
 .hd-bk {
   height: 180px;
-  background: url('~@/assets/img/bili_bk.png') no-repeat fixed center top;
+  position: relative;
+  background-color: rgba(115, 201, 229, .6);
+  background-image: url('~@/assets/img/bili_bk.png');
+  background-repeat: no-repeat;
+  background-position: center top;
+}
+.hd-bk a:hover,
+.el-dropdown-selfdefine:hover {
+  color:#73c9e5;
+}
+/* 下拉菜单样式 */
+.el-dropdown-selfdefine {
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
 }
 </style>

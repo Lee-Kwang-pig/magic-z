@@ -6,19 +6,20 @@
     </div>
     <router-view/> -->
     <main-header></main-header>
-    <home></home>
+    <router-view></router-view>
+    <!-- <home></home> -->
   </div>
 </template>
 
 <script>
 import MainHeader from './components/content/MainHeader.vue'
-import Home from './views/home/Home.vue'
+// import Home from './views/home/Home.vue'
 
 export default {
   name: 'App',
   components: {
-    MainHeader,
-    Home
+    MainHeader
+    // Home
 
   }
 }

@@ -27,9 +27,9 @@ a {
   text-decoration:none;
 }
 
-a:hover {
+/* a:hover {
   color:#73c9e5;
-}
+} */
 
 button,input {
   font-family:Microsoft YaHei,Heiti SC,tahoma,arial,Hiragino Sans GB,"\5B8B\4F53",sans-serif;
